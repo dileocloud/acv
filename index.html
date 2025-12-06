@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ACV: protocolos nacionales y desafíos locales - Un trabajo estadístico y análisis comparativo de la red de stroke en Córdoba">
+    <meta name="author" content="Chiara Di Leo">
+    <meta name="keywords" content="ACV, stroke, Córdoba, bioimágenes, salud pública, neurología">
+    <title>ACV: Protocolos Nacionales y Desafíos Locales</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    
+    <!-- Estilos -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="header-title">ACV: Protocolos Nacionales y Desafíos Locales</h1>
+                <p class="header-subtitle">Un trabajo estadístico y análisis comparativo de la red de stroke</p>
+                <div class="header-meta">
+                    <p class="author">Autora: <strong>Chiara Di Leo</strong></p>
+                    <p class="institution">Universidad Nacional de Córdoba - Licenciatura en Generación de Bioimágenes</p>
+                    <p class="date">Agosto 2025</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navegación -->
+    <nav class="nav">
+        <div class="container">
+            <ul class="nav-list">
+                <li><a href="#introduccion" class="nav-link">Introducción</a></li>
+                <li><a href="#estadisticas" class="nav-link">Estadísticas</a></li>
+                <li><a href="#objetivos" class="nav-link">Objetivos</a></li>
+                <li><a href="#conclusiones" class="nav-link">Conclusiones</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Introducción -->
+        <section id="introduccion" class="section section-intro">
+            <div class="container">
+                <h2 class="section-title">Introducción</h2>
+                <div class="intro-content">
+                    <div class="intro-text">
+                        <p class="lead">El accidente cerebrovascular (ACV) es una importante problemática de salud pública en Argentina.</p>
+                        
+                        <div class="stat-highlight">
+                            <div class="stat-number">120,000</div>
+                            <div class="stat-label">argentinos sufrieron un ACV en 2022</div>
+                        </div>
+
+                        <p>Durante el año 2022, se estima que alrededor de 120.000 argentinos sufrieron un ACV, posicionándolo no solo como la <strong>primera causa prevenible de discapacidad</strong>, sino también como la <strong>tercera causa de muerte</strong> con 25.754 defunciones.</p>
+
+                        <p>En Córdoba, la gestión y atención del ACV presenta desafíos tanto a nivel del sistema de salud como en el nivel de conocimiento de la población.</p>
+
+                        <div class="problem-box">
+                            <h3>Problemática Identificada</h3>
+                            <p>La falta de información y orientación ante un ACV genera incertidumbre en momentos críticos para su diagnóstico y tratamiento. Esta investigación analiza la participación de los profesionales de la salud, la esquematización de protocolos de atención y las brechas informativas que afectan el acceso a un tratamiento oportuno y efectivo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Estadísticas -->
+        <section id="estadisticas" class="section section-stats">
+            <div class="container">
+                <h2 class="section-title">Estadísticas del Estudio</h2>
+                
+                <div class="study-info">
+                    <div class="study-card">
+                        <div class="study-icon">👥</div>
+                        <div class="study-number">130</div>
+                        <div class="study-label">Población General Encuestada</div>
+                    </div>
+                    <div class="study-card">
+                        <div class="study-icon">🏥</div>
+                        <div class="study-number">30</div>
+                        <div class="study-label">Licenciados en Bioimágenes</div>
+                    </div>
+                    <div class="study-card">
+                        <div class="study-icon">📅</div>
+                        <div class="study-number">30</div>
+                        <div class="study-label">Días de Recolección</div>
+                    </div>
+                </div>
+
+                <!-- Gráficos -->
+                <div class="charts-grid">
+                    <!-- Percepción de Información -->
+                    <div class="chart-card">
+                        <h3 class="chart-title">Percepción sobre Información Disponible</h3>
+                        <p class="chart-description">¿Cree que la población tiene suficiente información sobre cómo actuar ante un ACV?</p>
+                        <div class="chart-container">
+                            <canvas id="chartPercepcion"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Experiencia Profesional -->
+                    <div class="chart-card">
+                        <h3 class="chart-title">Experiencia de Licenciados</h3>
+                        <p class="chart-description">Años de experiencia ejerciendo con el título de Licenciado/a en Bioimágenes</p>
+                        <div class="chart-container">
+                            <canvas id="chartExperiencia"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Capacitación en ACV -->
+                    <div class="chart-card">
+                        <h3 class="chart-title">Capacitación Específica en ACV</h3>
+                        <p class="chart-description">¿Ha recibido formación específica en Accidente Cerebrovascular?</p>
+                        <div class="chart-container">
+                            <canvas id="chartCapacitacion"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Disponibilidad de Guardia -->
+                    <div class="chart-card">
+                        <h3 class="chart-title">Disponibilidad de Guardia Neurológica</h3>
+                        <p class="chart-description">Disponibilidad de guardia de neurología en instituciones de Córdoba</p>
+                        <div class="chart-container">
+                            <canvas id="chartGuardia"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hallazgos Clave -->
+                <div class="findings">
+                    <h3 class="findings-title">Hallazgos Clave</h3>
+                    <div class="findings-grid">
+                        <div class="finding-card finding-alert">
+                            <div class="finding-number">93.1%</div>
+                            <div class="finding-text">de la población cree que podría mejorar la difusión de información sobre ACV</div>
+                        </div>
+                        <div class="finding-card finding-warning">
+                            <div class="finding-number">66.7%</div>
+                            <div class="finding-text">de los licenciados NO recibió capacitación específica en ACV</div>
+                        </div>
+                        <div class="finding-card finding-info">
+                            <div class="finding-number">36.7%</div>
+                            <div class="finding-text">de las instituciones NO tiene guardia de neurología disponible</div>
+                        </div>
+                        <div class="finding-card finding-success">
+                            <div class="finding-number">46.7%</div>
+                            <div class="finding-text">de los licenciados tiene más de 10 años de experiencia</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Objetivos -->
+        <section id="objetivos" class="section section-objectives">
+            <div class="container">
+                <h2 class="section-title">Objetivos de la Investigación</h2>
+                <div class="objectives-grid">
+                    <div class="objective-card">
+                        <div class="objective-icon">🎯</div>
+                        <h3>Evaluar el Conocimiento General</h3>
+                        <p>Evaluar el conocimiento general de los cordobeses sobre el ACV y sus protocolos de atención.</p>
+                    </div>
+                    <div class="objective-card">
+                        <div class="objective-icon">👨‍⚕️</div>
+                        <h3>Participación de Licenciados</h3>
+                        <p>Evaluar la participación de los Licenciados en Bioimágenes de Córdoba en la atención del ACV.</p>
+                    </div>
+                    <div class="objective-card">
+                        <div class="objective-icon">📋</div>
+                        <h3>Comparar Protocolos</h3>
+                        <p>Comparar la organización y protocolo de atención local con los estándares nacionales.</p>
+                    </div>
+                    <div class="objective-card">
+                        <div class="objective-icon">⚡</div>
+                        <h3>Importancia del Accionar Rápido</h3>
+                        <p>Determinar la importancia de implementación de protocolos y el hincapié en el rápido accionar.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conclusiones -->
+        <section id="conclusiones" class="section section-conclusions">
+            <div class="container">
+                <h2 class="section-title">Conclusiones y Beneficios</h2>
+                
+                <div class="conclusion-text">
+                    <p class="lead">Esta investigación es fundamental para comprender el alcance de la problemática y proponer soluciones efectivas.</p>
+                </div>
+
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <h3>🎓 Licenciados en Bioimágenes</h3>
+                        <p>Contarán con mayor conocimiento y mejores herramientas para enriquecer su desarrollo y revalorizar su rol dentro del equipo de salud, ofreciendo un mejor pronóstico para sus pacientes.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h3>🏥 Instituciones de Salud</h3>
+                        <p>Mejorarán la atención a sus afiliados y pacientes en el ambiente hospitalario, y la calidad del servicio prestado.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h3>📊 Organismos Reguladores</h3>
+                        <p>Dispondrán de evidencia científica para fortalecer las normativas de protocolos estandarizados y garantizar una mejora en la calidad de vida de las personas afectadas por ACV.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h3>👨‍👩‍👧‍👦 Público en General</h3>
+                        <p>Mayor conocimiento sobre factores de riesgo, prevención y cómo actuar ante un evento de ACV, mejorando los tiempos de respuesta y pronóstico.</p>
+                    </div>
+                </div>
+
+                <div class="methodology-box">
+                    <h3>Metodología del Estudio</h3>
+                    <p><strong>Tipo de estudio:</strong> Enfoque mixto (cuantitativo y cualitativo), de alcance descriptivo y comparativo.</p>
+                    <p><strong>Diseño:</strong> No experimental y de corte transversal.</p>
+                    <p><strong>Período:</strong> Septiembre - Octubre 2025</p>
+                    <p><strong>Técnicas:</strong> Encuestas anónimas a población general y licenciados, entrevista semi-estructurada a autoridad del sector, análisis documental de reportes oficiales.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Trabajo Final de Licenciatura</h3>
+                    <p><strong>Autora:</strong> Chiara Di Leo</p>
+                    <p><strong>Tutor:</strong> Lucas Fedele</p>
+                    <p><strong>Institución:</strong> Universidad Nacional de Córdoba</p>
+                    <p><strong>Facultad:</strong> Ciencias Médicas - Escuela de Tecnología Médica</p>
+                    <p><strong>Carrera:</strong> Licenciatura en Generación de Bioimágenes</p>
+                </div>
+                <div class="footer-year">
+                    <p>Córdoba, Argentina</p>
+                    <p>Agosto 2025</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/charts.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
